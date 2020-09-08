@@ -1,0 +1,21 @@
+//DH HEROES
+const express = require("express")
+let app = express()
+const path = require("path")
+const file = require("./heroes.json")
+
+
+app.get("/", (req, res) => {
+    res.send(`Ni Superman, Iron
+    Man o La Mujer Maravilla son tan importantes cómo las y los Heroes de carne y
+    hueso que encontrarás en este sitio. Esperamos que ellas y ellos te sirvan como
+    inspiración para poder cumplir tus objetivos. Recuerda: ¡nunca pares de creer en
+    ti!.`)
+})
+app.get("/heroes", (req, res) => {
+    res.send(file)
+})
+app.get("/creditos", (req, res) => {
+    res.send (`Javier Esteban Mirasson`)
+})
+app.listen(3000, () => console.log('Servidor corriendo'))
